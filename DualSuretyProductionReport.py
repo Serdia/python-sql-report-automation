@@ -10,16 +10,25 @@ import openpyxl
 from openpyxl.styles import Alignment 
 from functions import write_summary_formula, apply_double_border_range, double_border_format,adjust_columns_width, header_formatting
 
+# Load environment variables from .env
+load_dotenv()
+
+# Get credentials from environment
+server = os.getenv("SQL_SERVER")
+database = os.getenv("SQL_DB")
+user = os.getenv("SQL_USER")
+password = os.getenv("SQL_PASSWORD")
+
 ##\\fs01\Align\Accounting\Accounting\Carrier Reporting\FY2024\DUAL NA\AXIS Insurance (Surety)
 
 # # Get the directory of the current project
 project_folder = os.path.abspath(os.curdir)+ '\\' +'Dual Surety Production Report'
 
 params = urllib.parse.quote_plus("Driver={ODBC Driver 17 for SQL Server};"
-                                 "SERVER=10.26.8.18;"
-                                 "DATABASE=MEJAMES;"
-                                 "UID=ssrsserviceaccount;"
-                                 "PWD=D:hNc364.qcD](x^")
+                                 "SERVER={server};"
+                                 "DATABASE={database};"
+                                 "UID={user};"
+                                 "PWD={password}")
 
 engine = sa.create_engine("mssql+pyodbc:///?odbc_connect={}".format(params))
 
