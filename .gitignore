@@ -1,0 +1,8 @@
+# Environment files (secrets)
+.env
+
+# development environment
+Dev/
+
+# files
+get_params.sql
