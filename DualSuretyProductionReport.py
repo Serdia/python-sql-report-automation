@@ -1,5 +1,4 @@
-# activate venv: cd "C:\Users\ssrsserviceaccount\Documents\Oleg Files\Python\virtual_env"; .venv\Scripts\Activate.ps1  --old
-# cd "C:\Users\ssrsserviceaccount\Documents\Oleg Files\Python"; .venv\Scripts\Activate.ps1
+
 
 import sqlalchemy as sa
 import urllib
@@ -19,7 +18,6 @@ database = os.getenv("SQL_DB")
 user = os.getenv("SQL_USER")
 password = os.getenv("SQL_PASSWORD")
 
-##\\fs01\Align\Accounting\Accounting\Carrier Reporting\FY2024\DUAL NA\AXIS Insurance (Surety)
 
 # # Get the directory of the current project
 project_folder = os.path.abspath(os.curdir)+ '\\' +'Dual Surety Production Report'
